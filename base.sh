@@ -28,6 +28,7 @@ PACMAN_PKGS=(
     "ninja"
     "networkmanager"
     "openssh"
+    "docker"
     # Programming languages
     "go"
     "r"
@@ -143,6 +144,10 @@ read -p "Set password: " -s pass
 # Set user
 useradd -m -s /bin/zsh "$1"
 
+# Add docker group
+groupadd docker
+usermod -aG docker $1
+
 # Set password
 echo "root:$pass" | chpasswd
 echo "$1:$pass" | chpasswd
@@ -168,3 +173,5 @@ systemctl enable getty@tty1.service
 systemctl enable NetworkManager
 systemctl enable sshd
 systemctl enable systemd-timesyncd
+systemctl enable docker.service
+
