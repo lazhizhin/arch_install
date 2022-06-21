@@ -34,3 +34,5 @@ Packages for [`neovim`](https://neovim.io/) also won't be installed out of the b
 
 ### TODO
 - [ ] Replace *synaptics* with *libinput* as [Arch wiki](https://wiki.archlinux.org/title/Touchpad_Synaptics) suggests
+- [ ] Fix AUR packages installation
+- [ ] Fix R libraries installation
